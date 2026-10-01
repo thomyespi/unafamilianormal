@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* Sistema visual de las propuestas de Agus. Hex aproximados tomados del PDF: confirmar con la clienta. */
+@theme {
+  --color-crema: #fdf8f5;
+  --color-nude: #e9d5ca;
+  --color-nude-claro: #f6eee9;
+  --color-terracota: #a97b63;
+  --color-terracota-oscuro: #734b38; /* variante para texto con contraste AA sobre crema, nude y el degradé */
+  --color-rosado: #c9a190;
+  --color-cacao: #8c6b5d;
+  --color-tinta: #2f2522;
+  --color-tinta-suave: #5e4f4a;
+
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-crema);
+  color: var(--color-tinta);
+}
+
+/* Fondo nude con degradé suave y grilla tenue, como la portada de las propuestas */
+.fondo-portada {
+  background-color: var(--color-nude);
+  background-image:
+    linear-gradient(to right, rgb(169 123 99 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(169 123 99 / 0.08) 1px, transparent 1px),
+    linear-gradient(160deg, #f0e2d8 0%, #e2c9bb 100%);
+  background-size: 80px 80px, 80px 80px, 100% 100%;
+}
+
+/* Tono cálido sutil para unificar fotos */
+.foto-calida {
+  filter: sepia(0.08) saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
